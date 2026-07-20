@@ -1,30 +1,31 @@
 import json 
 import subprocess
+import sys
 
 class MCPClient:
     def __init__(self):
         self.process = subprocess.Popen(
-            ["python", "../MCP server/main.py"],
+            [sys.executable, r"D:\projects\MCP\MCP server\main.py"],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
             text=True
         )
         self.id = 1
 
-    def request(self,method,params=None):
+    def request(self, method, params=None):
+        print("Sending request...")
         req = {
             "jsonrpc": "2.0",
             "id": self.id,
             "method": method,
             "params": params or {}
-        }    
-
+        }
         self.id += 1
         self.process.stdin.write(json.dumps(req) + "\n")
         self.process.stdin.flush()
-
+        print("Waiting for response...")
         response = self.process.stdout.readline()
+        print("Received:", repr(response))
         return json.loads(response)
     
     def initialize(self):

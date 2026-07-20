@@ -1,6 +1,85 @@
+// with just the server side for the testing purpose
 {"jsonrpc":"2.0","id":1,"method":"initialize"}
 {"jsonrpc": "2.0", "id": 1, "result": {"protocolVersion": "0.1", "serverInfo": {"name": "Scratch MCP", "version": "1.0"}}, "error": null}
 {"jsonrpc":"2.0","id":2,"method":"tools/list"} 
 {"jsonrpc": "2.0", "id": 2, "result": {"tools": [{"name": "calculator", "description": "A simple calculator tool that can perform basic arithmetic operations.", "input_schema": {"operation": {"type": "string", "enum": ["add", "subtract", "multiply", "divide"], "description": "The arithmetic operation to perform."}, "operands": {"type": "array", "items": {"type": "number"}, "minItems": 2, "description": "A list of numbers to perform the operation on."}}}]}, "error": null}
 {"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"calculator","arguments":{"operation":"add","operands":[1,2]}}}
 {"jsonrpc": "2.0", "id": 3, "result": {"output": 3}, "error": null}
+
+// actual working prototype of the mcp from scratch
+
+Sending request...
+Waiting for response...
+Received: '{"jsonrpc": "2.0", "id": 1, "result": {"protocolVersion": "0.1", "serverInfo": {"name": "Scratch MCP", "version": "1.0"}}, "error": null}\n'
+You: what is ppo and fte in term of job
+
+Assistant:
+Sending request...
+Waiting for response...
+Received: '{"jsonrpc": "2.0", "id": 2, "result": {"tools": [{"name": "calculator", "description": "A calculator tool for arithmetic calculations only.\\nUse this ONLY for numerical operations like addition,\\nsubtraction, multiplication, or division.\\nDo NOT use this tool for general questions.", "input_schema": {"operation": {"type": "string", "enum": ["add", "subtract", "multiply", "divide"], "description": "The arithmetic operation to perform."}, "operands": {"type": "array", "items": {"type": "number"}, "minItems": 2, "description": "A list of numbers to perform the operation on."}}}]}, "error": null}\n'
+Okay, let's break down PPO and FTE in the context of jobs.
+
+**FTE stands for Full-Time Equivalent.** It’s a measure of how much a full-time employee’s time is being used. It’s a common way companies track the workload and staffing levels, especially when they have a mix of full-time, part-time, and contract workers.
+
+*   **Example:** If a company has 3 full-time employees, and each works 1.5 FTEs, that means they are effectively utilizing the equivalent of 4.5 full-timeemployees’ work.
+
+**PPO stands for Permanent Placement Office.** This is a specific type of recruitment role, primarily found within larger organizations.
+
+*   **Role Description:** A PPO’s main job is to handle the entire recruitment process for permanent positions. This includes:
+    *   Sourcing candidates (often through LinkedIn and other platforms)
+    *   Screening resumes
+    *   Conducting initial phone screens
+    *   Scheduling and coordinating interviews
+    *   Working with hiring managers to understand needs
+    *   Managing the offer process
+    *   Onboarding new hires.
+
+**In short:** FTE is a calculation metric, while PPO is a job title.
+
+Do you want me to elaborate on either of these concepts further, or perhaps give you an example of how they might be used in a company?
+Okay, let's break down PPO and FTE in the context of jobs.
+
+**FTE stands for Full-Time Equivalent.** It’s a measure of how much a full-time employee’s time is being used. It’s a common way companies track the workload and staffing levels, especially when they have a mix of full-time, part-time, and contract workers.
+
+*   **Example:** If a company has 3 full-time employees, and each works 1.5 FTEs, that means they are effectively utilizing the equivalent of 4.5 full-timeemployees’ work.
+
+**PPO stands for Permanent Placement Office.** This is a specific type of recruitment role, primarily found within larger organizations.
+
+*   **Role Description:** A PPO’s main job is to handle the entire recruitment process for permanent positions. This includes:
+    *   Sourcing candidates (often through LinkedIn and other platforms)
+    *   Screening resumes
+    *   Conducting initial phone screens
+    *   Scheduling and coordinating interviews
+    *   Working with hiring managers to understand needs
+    *   Managing the offer process
+    *   Onboarding new hires.
+
+**In short:** FTE is a calculation metric, while PPO is a job title.
+
+Do you want me to elaborate on either of these concepts further, or perhaps give you an example of how they might be used in a company?
+
+You: what is 100*1000
+
+Assistant:
+Sending request...
+Waiting for response...
+Received: '{"jsonrpc": "2.0", "id": 3, "result": {"tools": [{"name": "calculator", "description": "A calculator tool for arithmetic calculations only.\\nUse this ONLY for numerical operations like addition,\\nsubtraction, multiplication, or division.\\nDo NOT use this tool for general questions.", "input_schema": {"operation": {"type": "string", "enum": ["add", "subtract", "multiply", "divide"], "description": "The arithmetic operation to perform."}, "operands": {"type": "array", "items": {"type": "number"}, "minItems": 2, "description": "A list of numbers to perform the operation on."}}}]}, "error": null}\n'
+{
+  "tool": "calculator",
+  "arguments": {
+    "operation": "multiply",
+    "operands": [100, 1000]
+  }
+}
+Sending request...
+Waiting for response...
+Received: '{"jsonrpc": "2.0", "id": 4, "result": {"output": 100000}, "error": null}\n'
+
+
+
+You: what is 100/0
+
+Assistant:
+Sending request...
+Waiting for response...
+Received: '{"jsonrpc": "2.0", "id": 5, "result": {"tools": [{"name": "calculator", "description": "A calculator tool for arithmetic calculations only.\\nUse this ONLY for numerical operations like addition,\\nsubtraction, multiplication, or division.\\nDo NOT use this tool for general questions.", "input_schema": {"operation": {"type": "string", "enum": ["add", "subtract", "multiply", "divide"], "description": "The arithmetic operation to perform."}, "operands": {"type": "array", "items": {"type": "number"}, "minItems": 2, "description": "A list of numbers to perform the operation on."}}}]}, "error": null}\n'

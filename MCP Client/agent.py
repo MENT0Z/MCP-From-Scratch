@@ -2,6 +2,7 @@ from ollama_client import OllamaClient
 from mcp_client import MCPClient
 from parser import parse_tool_call
 from prompts import SYSTEM_PROMPT
+import json
 
 
 class Agent:
@@ -12,9 +13,9 @@ class Agent:
 
     def chat(self, user_message):
         tools = self.mcp.list_tools()["result"]["tools"]
-        tool_text = "\n".join(
-            f"{t['name']} : {t['description']}"
-            for t in tools
+        tool_text = json.dumps(
+            tools,
+            indent=2
         )
         messages = [
             {

@@ -2,7 +2,10 @@ from registry import BaseTool
 
 class CalculatorTool(BaseTool):
     name = "calculator"
-    description = "A simple calculator tool that can perform basic arithmetic operations."
+    description = """A calculator tool for arithmetic calculations only.
+Use this ONLY for numerical operations like addition,
+subtraction, multiplication, or division.
+Do NOT use this tool for general questions."""
     input_schema = {
         "operation": {
             "type": "string",
