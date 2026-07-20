@@ -31,7 +31,9 @@ class Router:
             output = tool.execute(request.params["arguments"])
             return JsonRPCResponse(
                 id=request.id,
-                result=output
+                result={
+                    "output": output
+                }
             )
         
         else:
