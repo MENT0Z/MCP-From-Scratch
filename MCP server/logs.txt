@@ -1,0 +1,6 @@
+{"jsonrpc":"2.0","id":1,"method":"initialize"}
+{"jsonrpc": "2.0", "id": 1, "result": {"protocolVersion": "0.1", "serverInfo": {"name": "Scratch MCP", "version": "1.0"}}, "error": null}
+{"jsonrpc":"2.0","id":2,"method":"tools/list"} 
+{"jsonrpc": "2.0", "id": 2, "result": {"tools": [{"name": "calculator", "description": "A simple calculator tool that can perform basic arithmetic operations.", "input_schema": {"operation": {"type": "string", "enum": ["add", "subtract", "multiply", "divide"], "description": "The arithmetic operation to perform."}, "operands": {"type": "array", "items": {"type": "number"}, "minItems": 2, "description": "A list of numbers to perform the operation on."}}}]}, "error": null}
+{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"calculator","arguments":{"operation":"add","operands":[1,2]}}}
+{"jsonrpc": "2.0", "id": 3, "result": {"output": 3}, "error": null}
