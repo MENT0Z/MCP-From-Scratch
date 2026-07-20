@@ -3,7 +3,7 @@ import requests
 class OllamaClient:
     def __init__(self):
         self.url = "http://localhost:11434/api/chat"
-        self.model = "gemma3:1b"
+        self.model = "gemma3:latest"
     
     def chat(self,message):
         response = requests.post(
