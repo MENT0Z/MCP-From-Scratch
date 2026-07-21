@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+
+    "calculator": {
+      "command": "python",
+      "args": [
+        "servers/calculator.py"
+      ]
+    },
+
+
+    "weather": {
+      "command": "python",
+      "args": [
+        "servers/weather.py"
+      ]
+    },
+
+
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./data"
+      ]
+    }
+  }
+}

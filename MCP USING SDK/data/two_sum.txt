@@ -1,0 +1,8 @@
+def twoSum(nums, target):
+    num_dict = {}
+    for i in range(len(nums)):
+        if nums[i] in num_dict:
+            return [num_dict[nums[i]], i]
+        else:
+            num_dict[nums[i]] = i
+    return []
